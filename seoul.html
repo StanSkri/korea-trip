@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf9f5"><title>Сеул · что посмотреть</title>
+<style>
+:root{
+  --bg:#faf9f5;--card:#ffffff;--soft:#f1efe8;--text:#1a1a18;--muted:#6b6a64;--faint:#9a988f;
+  --border:#e6e4db;--bordr2:#d3d1c7;--accent:#185fa5;--naver:#0c8a43;
+  --fr-b:#eaf3de;--fr-t:#3b6d11;--ch-b:#e6f1fb;--ch-t:#185fa5;--pd-b:#faeeda;--pd-t:#854f0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1d1c1a;--card:#292825;--soft:#2f2e2a;--text:#ededeb;--muted:#a3a199;--faint:#7d7b73;
+    --border:#3a3833;--bordr2:#4a4842;--accent:#85b7eb;--naver:#3ad17a;
+    --fr-b:#27500a;--fr-t:#c0dd97;--ch-b:#0c447c;--ch-t:#b5d4f4;--pd-b:#633806;--pd-t:#fac775;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;padding:16px 16px calc(28px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto}
+a{color:inherit}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:13px;color:var(--muted);margin:0 0 14px}
+.back{display:inline-block;font-size:13px;color:var(--accent);text-decoration:none;margin-bottom:10px}
+.info{background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:13px}
+.info div{margin:3px 0}
+.info b{font-weight:600}
+.legend{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.7}
+.barwrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5}
+.track{flex:1;height:7px;border-radius:999px;background:var(--soft);overflow:hidden}
+#bar{height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .2s}
+.cnt{font-size:12px;color:var(--muted);white-space:nowrap}
+.btn{font:inherit;font-size:12px;padding:5px 10px;border-radius:8px;border:0.5px solid var(--bordr2);background:var(--card);color:var(--muted);cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 6px}
+.chip{font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;border:0.5px solid var(--bordr2);background:var(--card);color:var(--muted);cursor:pointer;white-space:nowrap}
+.chip.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.dh{display:flex;align-items:baseline;gap:8px;font-size:15px;font-weight:600;margin:20px 0 6px}
+.dh .dt{font-size:12px;font-weight:400;color:var(--faint);margin-left:auto}
+.row{display:flex;gap:12px;padding:11px 0;border-top:0.5px solid var(--border)}
+.chk{flex:0 0 auto;width:26px;height:26px;border-radius:7px;border:1.5px solid var(--bordr2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:transparent;margin-top:1px;transition:.12s}
+.chk.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.rt{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.nm{font-size:15px;font-weight:600}
+.rs{font-size:13px;color:var(--muted);margin-top:2px}
+.rl{font-size:12px;color:var(--faint);margin-top:5px}
+.maps{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}
+.mbtn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;text-decoration:none;border-radius:8px;padding:6px 11px;border:0.5px solid var(--bordr2);background:var(--card)}
+.mbtn:active{background:var(--soft)}
+.mbtn.g{color:var(--accent)}.mbtn.n{color:var(--naver)}
+.mbtn .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.mbtn.g .dot{background:var(--accent)}.mbtn.n .dot{background:var(--naver)}
+.badge{font-size:11px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500}
+.b-free{background:var(--fr-b);color:var(--fr-t)}
+.b-cheap{background:var(--ch-b);color:var(--ch-t)}
+.b-paid{background:var(--pd-b);color:var(--pd-t)}
+.foot{font-size:12px;color:var(--faint);margin-top:20px}
+.done .nm{text-decoration:line-through;text-decoration-color:var(--faint)}
+.done{opacity:.62}
+</style></head><body>
+<a class="back" href="index.html">← Все гиды</a>
+<h1>Сеул · что посмотреть</h1>
+<p class="sub">Виды, арт, еда и скрытые места. Баланс топ + локальное. Галочки сохраняются на телефоне.</p>
+<div class="legend">⭐ топ-обязательное&nbsp; · &nbsp;💎 скрытое/insider&nbsp; · &nbsp;фильтры по теме ниже</div>
+<div class="barwrap"><div class="track"><div id="bar"></div></div>
+<span class="cnt"><span id="cnt">0</span>/<span id="totalN">0</span></span>
+<button class="btn" id="reset">Сброс</button></div>
+<div class="chips"><button class="chip active" data-f="all">Все</button><button class="chip" data-f="nature">🏞 Природа·виды</button><button class="chip" data-f="food">🍜 Еда·рынки</button><button class="chip" data-f="art">🎨 Арт·дизайн</button><button class="chip" data-f="photo">💎 Скрытое·фото</button><button class="chip" data-f="active">🥾 Актив·хайк</button></div>
+<div id="list"><section class="dist"><div class="dh">Виды, природа, хайкинг <span class="dt">панорамы и закаты</span></div><div class="row" data-cat="nature active"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Inwangsan (Инвансан)</span><span class="badge b-free">бесплатно</span></div><div class="rs">Хайк по крепостной стене (338м), скала Beombawi; один из лучших закатных видов на N Tower и дворец. Стена подсвечена до полуночи.</div><div class="rl">📍 ~5км, 1.5–2ч · от ст. Gyeongbokgung вых.1</div><div class="maps" data-q="Inwangsan Seoul"></div></div></div><div class="row" data-cat="nature active"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Bukhansan — пик Baegundae</span><span class="badge b-free">бесплатно</span></div><div class="rs">Главный хайк Сеула: пик Baegundae 836м, панорама на весь город. Закладывай полдня, обувь для трекинга.</div><div class="rl">📍 Нац. парк; ~4.4км в одну, 3.5–5ч RT</div><div class="maps" data-q="Bukhansan National Park Baegundae Seoul"></div></div></div><div class="row" data-cat="nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Namsan / N Seoul Tower</span><span class="badge b-paid">платно</span></div><div class="rs">262м: канатка или пешком; обзорная башня с видами на реку Хан и центр. Смотровая платная (~21k).</div><div class="rl">📍 Канатка от Myeongdong; вечером красиво</div><div class="maps" data-q="N Seoul Tower Namsan Seoul"></div></div></div><div class="row" data-cat="nature photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Naksan Park</span><span class="badge b-free">бесплатно</span></div><div class="rs">Лёгкий гребневой парк вдоль крепостной стены, отличные закаты; рядом Ihwa Mural Village.</div><div class="rl">📍 ~1.5–2км · от ст. Hyehwa</div><div class="maps" data-q="Naksan Park Seoul"></div></div></div><div class="row" data-cat="active photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Bugaksan Fortress Trail</span><span class="badge b-free">бесплатно</span></div><div class="rs">Тихий участок Сеульской крепостной стены над Bukchon — панорамы, сторожевые посты. Бери паспорт.</div><div class="rl">📍 Гребень от Malbawi / Changuimun</div><div class="maps" data-q="Bugaksan Fortress Trail Seoul"></div></div></div><div class="row" data-cat="nature art"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Seonyudo Park</span><span class="badge b-free">бесплатно</span></div><div class="rs">Бывшая водоочистная станция на острове Хан → парк-сад в бетонных бассейнах. Тихо, атмосферно, пешеходный мост.</div><div class="rl">📍 ст. Seonyudo</div><div class="maps" data-q="Seonyudo Park Seoul"></div></div></div><div class="row" data-cat="nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Seoul Forest</span><span class="badge b-free">бесплатно</span></div><div class="rs">Большой парк рядом с Seongsu — олений вольер, велодорожки, зелёная база перед кофе-кроллом.</div><div class="rl">📍 ст. Seoul Forest</div><div class="maps" data-q="Seoul Forest Seongdong Seoul"></div></div></div><div class="row" data-cat="nature photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Banpo: радужный фонтан</span><span class="badge b-free">бесплатно</span></div><div class="rs">Летними вечерами — шоу «Moonlight Rainbow» (фонтан с подсветкой) на мосту через Хан; пикник в Hangang Park.</div><div class="rl">📍 Апр–окт, вечерние показы · ст. Express Bus Terminal</div><div class="maps" data-q="Banpo Bridge Moonlight Rainbow Fountain Seoul"></div></div></div><div class="row" data-cat="nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Haneul Park (Sky Park)</span><span class="badge b-free">бесплатно</span></div><div class="rs">Холм-парк с панорамой и полями пампасной травы (эффектнее осенью), закаты над городом.</div><div class="rl">📍 World Cup Park · ст. World Cup Stadium</div><div class="maps" data-q="Haneul Park Seoul"></div></div></div></section><section class="dist"><div class="dh">Арт, дизайн, архитектура <span class="dt">музеи и концепт-пространства</span></div><div class="row" data-cat="art photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ DDP (Dongdaemun Design Plaza)</span><span class="badge b-free">бесплатно</span></div><div class="rs">Неофутуризм Захи Хадид — текучие формы, крыша-парк, дизайн-маркет. Снаружи бесплатно, выставки платные; вечером подсветка + LED-розы.</div><div class="rl">📍 ст. Dongdaemun History &amp; Culture Park</div><div class="maps" data-q="Dongdaemun Design Plaza DDP Seoul"></div></div></div><div class="row" data-cat="art"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Leeum Museum of Art</span><span class="badge b-paid">платно</span></div><div class="rs">Топ арт-музей Samsung в Hannam: архитектура Botta/Nouvel/Koolhaas, традиционное + современное.</div><div class="rl">📍 ст. Hangangjin · закр. пн</div><div class="maps" data-q="Leeum Museum of Art Hannam Seoul"></div></div></div><div class="row" data-cat="art"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ MMCA Seoul</span><span class="badge b-paid">платно</span></div><div class="rs">Нац. музей совр. искусства у Bukchon/Samcheong — сильные выставки, недорогой вход.</div><div class="rl">📍 ст. Anguk</div><div class="maps" data-q="MMCA Seoul Samcheong"></div></div></div><div class="row" data-cat="art"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Amorepacific HQ + APMA</span><span class="badge b-paid">платно</span></div><div class="rs">Куб Дэвида Чипперфилда в Yongsan — атриум, музей искусств APMA, кафе. Архитектурный must для дизайнеров.</div><div class="rl">📍 ст. Sinyongsan</div><div class="maps" data-q="Amorepacific Headquarters Yongsan Seoul"></div></div></div><div class="row" data-cat="art photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Haus Dosan (Gentle Monster)</span><span class="badge b-free">бесплатно</span></div><div class="rs">Концепт-пространство Gentle Monster: мульти-этажная 3D-инсталляция (Frederik Heyman), робот THE PROBE, десерты NUDAKE.</div><div class="rl">📍 50 Apgujeong-ro 46-gil · 11:00–21:00</div><div class="maps" data-q="Haus Dosan Gentle Monster Seoul"></div></div></div><div class="row" data-cat="art photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 HAUS NOWHERE Seongsu</span><span class="badge b-free">бесплатно</span></div><div class="rs">14-этажный концепт-стор Gentle Monster — галерейные этажи с футуристичными инсталляциями. Бесплатно.</div><div class="rl">📍 у ст. Seongsu</div><div class="maps" data-q="Haus Nowhere Seongsu Seoul"></div></div></div><div class="row" data-cat="art photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Starfield Library (COEX)</span><span class="badge b-free">бесплатно</span></div><div class="rs">Огромная двухэтажная библиотека-инсталляция в молле COEX — главный бесплатный фотоспот.</div><div class="rl">📍 ст. Samseong</div><div class="maps" data-q="Starfield Library COEX Seoul"></div></div></div><div class="row" data-cat="art"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Piknic</span><span class="badge b-paid">платно</span></div><div class="rs">Арт-пространство в Jung-gu (бывший особняк) — сильные выставки и руфтоп с видом на город.</div><div class="rl">📍 у ст. Seoul Station / Hoehyeon</div><div class="maps" data-q="Piknic art space Seoul"></div></div></div></section><section class="dist"><div class="dh">Хипстер-районы и фотоспоты <span class="dt">скрытый и модный Сеул</span></div><div class="row" data-cat="photo food art"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Seongsu-dong</span><span class="badge b-free">бесплатно</span></div><div class="rs">Главный хипстер-хаб: склады → концепт-сторы, кафе, LCDC Seoul, Seongsu Yeonbang. Кофе и шопинг — в отдельных гидах.</div><div class="rl">📍 ст. Seongsu</div><div class="maps" data-q="Seongsu-dong Seoul"></div></div></div><div class="row" data-cat="photo food"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Ikseon-dong</span><span class="badge b-free">бесплатно</span></div><div class="rs">Модернизированные ханок-переулки: десерт-кафе, винные бары, BBQ в вековых домах. Лучше вечером.</div><div class="rl">📍 ст. Jongno 3-ga</div><div class="maps" data-q="Ikseon-dong Hanok Village Seoul"></div></div></div><div class="row" data-cat="photo food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Euljiro (Hip-jiro)</span><span class="badge b-free">бесплатно</span></div><div class="rs">Ретро-район печатных мастерских → скрытые бары и кафе (напр. Cafe 203). Атмосфернее всего вечером.</div><div class="rl">📍 ст. Euljiro 3-ga</div><div class="maps" data-q="Euljiro 3-ga Seoul"></div></div></div><div class="row" data-cat="photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Bukchon Hanok Village</span><span class="badge b-free">бесплатно</span></div><div class="rs">Традиционная деревня ханоков между дворцами — лучшие виды рано утром. Жилой район: соблюдай тишину.</div><div class="rl">📍 ст. Anguk</div><div class="maps" data-q="Bukchon Hanok Village Seoul"></div></div></div><div class="row" data-cat="art photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Samcheong-dong</span><span class="badge b-free">бесплатно</span></div><div class="rs">Галереи, бутики и кафе вдоль холмистой улицы у Bukchon — спокойнее туристических троп.</div><div class="rl">📍 ст. Anguk</div><div class="maps" data-q="Samcheong-dong Seoul"></div></div></div><div class="row" data-cat="photo food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Seochon</span><span class="badge b-free">бесплатно</span></div><div class="rs">Тихие ханок-переулки западнее Gyeongbokgung — инди-магазины, мастерские, кафе, рынок Tongin.</div><div class="rl">📍 ст. Gyeongbokgung</div><div class="maps" data-q="Seochon Seoul"></div></div></div><div class="row" data-cat="photo food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Yeonnam-dong</span><span class="badge b-free">бесплатно</span></div><div class="rs">«Yeontral Park» — линейный парк Gyeongui, кафе и стрит-фуд; молодёжно и расслабленно.</div><div class="rl">📍 ст. Hongik Univ</div><div class="maps" data-q="Yeonnam-dong Gyeongui Line Forest Seoul"></div></div></div><div class="row" data-cat="food photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Haebangchon / Gyeongnidan-gil</span><span class="badge b-free">бесплатно</span></div><div class="rs">Холмистый экспат-район в Yongsan под Namsan — виды, бары, разнообразная мировая еда.</div><div class="rl">📍 ст. Noksapyeong</div><div class="maps" data-q="Haebangchon Gyeongnidan-gil Seoul"></div></div></div><div class="row" data-cat="photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Ihwa Mural Village</span><span class="badge b-free">бесплатно</span></div><div class="rs">Граффити-деревня на склоне Naksan — муралы, лестницы, виды. Жилой район, веди себя тихо.</div><div class="rl">📍 ст. Hyehwa</div><div class="maps" data-q="Ihwa Mural Village Seoul"></div></div></div></section><section class="dist"><div class="dh">Рынки и стрит-фуд <span class="dt">гастро</span></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Gwangjang Market</span><span class="badge b-cheap">недорого</span></div><div class="rs">Икона стрит-фуда: bindaetteok (блины из мунг-боба), mayak gimbap, yukhoe (тартар). Живо и недорого.</div><div class="rl">📍 ст. Jongno 5-ga · днём и вечером</div><div class="maps" data-q="Gwangjang Market Seoul"></div></div></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Tongin Market</span><span class="badge b-cheap">недорого</span></div><div class="rs">«Монетный ланчбокс» (yeopjeon dosirak): меняешь латунные монеты на закуски у прилавков и собираешь обед.</div><div class="rl">📍 Seochon · ст. Gyeongbokgung</div><div class="maps" data-q="Tongin Market Seoul"></div></div></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Euljiro Nogari Alley</span><span class="badge b-cheap">недорого</span></div><div class="rs">Пивной переулок: nogari (сушёный минтай) + пиво на улице вечером — ретро-вайб старого Сеула.</div><div class="rl">📍 ст. Euljiro 3-ga</div><div class="maps" data-q="Euljiro Nogari Alley Seoul"></div></div></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Mangwon Market</span><span class="badge b-cheap">недорого</span></div><div class="rs">Локальный рынок почти без туристов — хотток, тток, жареные закуски по местным ценам.</div><div class="rl">📍 ст. Mangwon</div><div class="maps" data-q="Mangwon Market Seoul"></div></div></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Noryangjin Fish Market</span><span class="badge b-cheap">недорого</span></div><div class="rs">Огромный рыбный рынок — выбираешь морепродукты внизу, готовят наверху. Сашими, крабы, ракушки.</div><div class="rl">📍 ст. Noryangjin</div><div class="maps" data-q="Noryangjin Fish Market Seoul"></div></div></div></section></div>
+<p class="foot">Часы и цены меняются — проверяй на Naver/Kakao перед визитом. Google показывает точки, Naver точнее строит пешие маршруты по Корее. Подборка из гайдов и YouTube/Instagram-блогеров, перепроверена по официальным источникам где возможно.</p>
+<script>window.__KEY__="korea_seoul_v1";
+(function(){
+  [].slice.call(document.querySelectorAll('.maps')).forEach(function(m){
+    var q=encodeURIComponent(m.dataset.q);
+    m.innerHTML='<a class="mbtn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'"><span class="dot"></span>Google Maps</a>'+
+      '<a class="mbtn n" target="_blank" rel="noopener" href="https://map.naver.com/p/search/'+q+'"><span class="dot"></span>Naver</a>';
+  });
+  var KEY=window.__KEY__;
+  var rows=[].slice.call(document.querySelectorAll('.row'));
+  var saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  var cntEl=document.getElementById('cnt'),barEl=document.getElementById('bar');
+  document.getElementById('totalN').textContent=rows.length;
+  function refresh(){var d=rows.filter(function(r){return r.dataset.on==='1'}).length;cntEl.textContent=d;barEl.style.width=Math.round(d/rows.length*100)+'%';}
+  function setOn(r,on){r.dataset.on=on?'1':'0';r.querySelector('.chk').classList.toggle('on',on);r.classList.toggle('done',on);}
+  rows.forEach(function(r,i){
+    if(saved[i])setOn(r,true);
+    r.querySelector('.chk').addEventListener('click',function(){
+      var on=r.dataset.on==='1';setOn(r,!on);
+      if(on)delete saved[i];else saved[i]=1;
+      localStorage.setItem(KEY,JSON.stringify(saved));refresh();
+    });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    saved={};localStorage.removeItem(KEY);rows.forEach(function(r){setOn(r,false)});refresh();
+  });
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active')});c.classList.add('active');
+    var f=c.dataset.f;
+    rows.forEach(function(r){r.style.display=(f==='all'||r.dataset.cat.split(' ').indexOf(f)>-1)?'':'none';});
+    [].slice.call(document.querySelectorAll('.dist')).forEach(function(s){
+      s.style.display=[].slice.call(s.querySelectorAll('.row')).some(function(r){return r.style.display!=='none'})?'':'none';
+    });
+  })});
+  refresh();
+})();
+</script>
+</body></html>

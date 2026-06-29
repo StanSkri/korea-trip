@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf9f5"><title>Пусан · лучшее</title>
+<style>
+:root{
+  --bg:#faf9f5;--card:#ffffff;--soft:#f1efe8;--text:#1a1a18;--muted:#6b6a64;--faint:#9a988f;
+  --border:#e6e4db;--bordr2:#d3d1c7;--accent:#185fa5;--naver:#0c8a43;
+  --fr-b:#eaf3de;--fr-t:#3b6d11;--ch-b:#e6f1fb;--ch-t:#185fa5;--pd-b:#faeeda;--pd-t:#854f0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1d1c1a;--card:#292825;--soft:#2f2e2a;--text:#ededeb;--muted:#a3a199;--faint:#7d7b73;
+    --border:#3a3833;--bordr2:#4a4842;--accent:#85b7eb;--naver:#3ad17a;
+    --fr-b:#27500a;--fr-t:#c0dd97;--ch-b:#0c447c;--ch-t:#b5d4f4;--pd-b:#633806;--pd-t:#fac775;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;padding:16px 16px calc(28px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto}
+a{color:inherit}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:13px;color:var(--muted);margin:0 0 14px}
+.back{display:inline-block;font-size:13px;color:var(--accent);text-decoration:none;margin-bottom:10px}
+.info{background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:13px}
+.info div{margin:3px 0}
+.info b{font-weight:600}
+.legend{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.7}
+.barwrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5}
+.track{flex:1;height:7px;border-radius:999px;background:var(--soft);overflow:hidden}
+#bar{height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .2s}
+.cnt{font-size:12px;color:var(--muted);white-space:nowrap}
+.btn{font:inherit;font-size:12px;padding:5px 10px;border-radius:8px;border:0.5px solid var(--bordr2);background:var(--card);color:var(--muted);cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 6px}
+.chip{font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;border:0.5px solid var(--bordr2);background:var(--card);color:var(--muted);cursor:pointer;white-space:nowrap}
+.chip.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.dh{display:flex;align-items:baseline;gap:8px;font-size:15px;font-weight:600;margin:20px 0 6px}
+.dh .dt{font-size:12px;font-weight:400;color:var(--faint);margin-left:auto}
+.row{display:flex;gap:12px;padding:11px 0;border-top:0.5px solid var(--border)}
+.chk{flex:0 0 auto;width:26px;height:26px;border-radius:7px;border:1.5px solid var(--bordr2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:transparent;margin-top:1px;transition:.12s}
+.chk.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.rt{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.nm{font-size:15px;font-weight:600}
+.rs{font-size:13px;color:var(--muted);margin-top:2px}
+.rl{font-size:12px;color:var(--faint);margin-top:5px}
+.maps{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}
+.mbtn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;text-decoration:none;border-radius:8px;padding:6px 11px;border:0.5px solid var(--bordr2);background:var(--card)}
+.mbtn:active{background:var(--soft)}
+.mbtn.g{color:var(--accent)}.mbtn.n{color:var(--naver)}
+.mbtn .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.mbtn.g .dot{background:var(--accent)}.mbtn.n .dot{background:var(--naver)}
+.badge{font-size:11px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500}
+.b-free{background:var(--fr-b);color:var(--fr-t)}
+.b-cheap{background:var(--ch-b);color:var(--ch-t)}
+.b-paid{background:var(--pd-b);color:var(--pd-t)}
+.foot{font-size:12px;color:var(--faint);margin-top:20px}
+.done .nm{text-decoration:line-through;text-decoration-color:var(--faint)}
+.done{opacity:.62}
+</style></head><body>
+<a class="back" href="index.html">← Все гиды</a>
+<h1>Пусан · лучшее</h1>
+<p class="sub">Сжатый сильный список: побережье, виды, еда и арт. Галочки сохраняются на телефоне.</p>
+<div class="legend">⭐ топ-обязательное&nbsp; · &nbsp;💎 скрытое/insider&nbsp; · &nbsp;Пусан — короткая часть, только лучшее</div>
+<div class="barwrap"><div class="track"><div id="bar"></div></div>
+<span class="cnt"><span id="cnt">0</span>/<span id="totalN">0</span></span>
+<button class="btn" id="reset">Сброс</button></div>
+<div class="chips"><button class="chip active" data-f="all">Все</button><button class="chip" data-f="nature">🏖 Природа·берег</button><button class="chip" data-f="food">🍜 Еда</button><button class="chip" data-f="art">🎨 Арт</button><button class="chip" data-f="photo">💎 Скрытое·фото</button><button class="chip" data-f="active">🥾 Актив</button></div>
+<div id="list"><section class="dist"><div class="dh">Побережье, виды, актив <span class="dt">море и панорамы</span></div><div class="row" data-cat="nature photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Gwangalli Beach + мост Gwangan</span><span class="badge b-free">бесплатно</span></div><div class="rs">Лучший «городской» пляж: мост Gwangan с цветной подсветкой ночью, ряды кафе/баров. По субботам — дрон-шоу. Блогеры считают приятнее Haeundae.</div><div class="rl">📍 ст. Gwangan · вечер</div><div class="maps" data-q="Gwangalli Beach Busan"></div></div></div><div class="row" data-cat="nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Haeundae Beach</span><span class="badge b-free">бесплатно</span></div><div class="rs">Самый известный пляж — но людно и коммерциализировано (блогеры: слегка переоценён). Хорош для прогулки и базы района.</div><div class="rl">📍 ст. Haeundae</div><div class="maps" data-q="Haeundae Beach Busan"></div></div></div><div class="row" data-cat="active nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Haeundae Blueline Park</span><span class="badge b-paid">платно</span></div><div class="rs">Прибрежная ж/д-тропа Mipo→Cheongsapo→Songjeong (4.8км), топ урбан-регенерации. Совет блогеров: Sky Capsule дорогой — лучше пройти ~2км пешком от Mipo.</div><div class="rl">📍 ст. Jung-dong / Mipo</div><div class="maps" data-q="Haeundae Blueline Park Mipo Busan"></div></div></div><div class="row" data-cat="active nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Igidae Coastal Walk</span><span class="badge b-free">бесплатно</span></div><div class="rs">Прибрежная скальная тропа (~4.7км) — один из лучших видов на скайлайн Busan. Совмести с Oryukdo Skywalk.</div><div class="rl">📍 ст. Kyungsung Univ + автобус</div><div class="maps" data-q="Igidae Coastal Walk Busan"></div></div></div><div class="row" data-cat="photo nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Oryukdo Skywalk</span><span class="badge b-free">бесплатно</span></div><div class="rs">Стеклянная «подкова» над морскими скалами, виды на Восточное море. 10–15 мин, рядом тропа Igidae.</div><div class="rl">📍 автобус от Kyungsung Univ</div><div class="maps" data-q="Oryukdo Skywalk Busan"></div></div></div><div class="row" data-cat="nature active"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Songdo Beach + Air Cruise</span><span class="badge b-paid">платно</span></div><div class="rs">Недооценённый: канатка со стеклянным полом + подвесной мост, меньше толп. Crystal 24 000₩ / closed 19 000₩ туда-обратно (взр.).</div><div class="rl">📍 ст. Jagalchi + автобус/такси</div><div class="maps" data-q="Songdo Beach Cable Car Air Cruise Busan"></div></div></div><div class="row" data-cat="nature active"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Taejongdae</span><span class="badge b-free">бесплатно</span></div><div class="rs">Скальный мыс на Yeongdo — утёсы, маяк, морские виды. Паровозик Danubi (платный) экономит ноги.</div><div class="rl">📍 автобус от Nampo</div><div class="maps" data-q="Taejongdae Busan"></div></div></div><div class="row" data-cat="photo nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐💎 Huinnyeoul Culture Village</span><span class="badge b-free">бесплатно</span></div><div class="rs">Клифовая деревня на Yeongdo с видом на океан, террасные кафе, прибрежный тоннель. Блогеры предпочитают её Gamcheon — начни сверху и спускайся вниз.</div><div class="rl">📍 Yeongdo · такси/автобус</div><div class="maps" data-q="Huinnyeoul Culture Village Busan"></div></div></div><div class="row" data-cat="nature photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Dalmaji Hill</span><span class="badge b-free">бесплатно</span></div><div class="rs">«Холм любования луной» у Haeundae — приморская дорога, вишни, кафе с видом на залив.</div><div class="rl">📍 ст. Jung-dong</div><div class="maps" data-q="Dalmaji Hill Busan"></div></div></div><div class="row" data-cat="photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Haedong Yonggungsa</span><span class="badge b-free">бесплатно</span></div><div class="rs">Редкий приморский буддийский храм прямо на скалах (Gijang). Особенно красиво на рассвете и в синий час.</div><div class="rl">📍 северо-восток · автобус/такси</div><div class="maps" data-q="Haedong Yonggungsa Temple Busan"></div></div></div></section><section class="dist"><div class="dh">Арт, дизайн, архитектура <span class="dt">галереи и медиа-арт</span></div><div class="row" data-cat="art"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 F1963</span><span class="badge b-free">бесплатно</span></div><div class="rs">Бывшая проволочная фабрика → арт-комплекс из кирпича/стекла/стали: Kukje Gallery, книжный, кафе, бамбуковая тропа.</div><div class="rl">📍 у Mangmi / Suyeong</div><div class="maps" data-q="F1963 Busan"></div></div></div><div class="row" data-cat="art nature"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 MOCA Busan</span><span class="badge b-cheap">недорого</span></div><div class="rs">Музей совр. искусства на острове Eulsukdo — темы природы и экологии, «зелёное» здание у заповедника птиц.</div><div class="rl">📍 запад города</div><div class="maps" data-q="Museum of Contemporary Art Busan Eulsukdo"></div></div></div><div class="row" data-cat="art photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 ARTE Museum Yeongdo</span><span class="badge b-paid">платно</span></div><div class="rs">Крупнейший ARTE Museum — иммерсивный медиа-арт «Eternal Nature», 19 инсталляций (16 — эксклюзив локации).</div><div class="rl">📍 Yeongdo</div><div class="maps" data-q="ARTE Museum Busan Yeongdo"></div></div></div><div class="row" data-cat="photo art"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Gamcheon Culture Village</span><span class="badge b-free">бесплатно</span></div><div class="rs">Разноцветная деревня-арт на склоне — фотогенично, но людно (~2–3ч; карта 2 000₩). Менее «настоящая», чем Huinnyeoul — выбирай по настроению.</div><div class="rl">📍 ст. Toseong + автобус/такси</div><div class="maps" data-q="Gamcheon Culture Village Busan"></div></div></div></section><section class="dist"><div class="dh">Еда и рынки <span class="dt">морепродукты и стрит-фуд</span></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ Jagalchi Fish Market</span><span class="badge b-cheap">недорого</span></div><div class="rs">Крупнейший рыбный рынок Кореи. Совет: пропусти главное здание — у открытой набережной дешевле; купленное готовят на 2-м этаже за ~5 000₩ сервировку.</div><div class="rl">📍 ст. Jagalchi</div><div class="maps" data-q="Jagalchi Fish Market Busan"></div></div></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">⭐ BIFF Square / Gukje Market</span><span class="badge b-cheap">недорого</span></div><div class="rs">Стрит-фуд зона Nampo: ssiat hotteok (хотток с семечками), кимбап, плюс большой рынок Gukje рядом.</div><div class="rl">📍 ст. Jagalchi / Nampo</div><div class="maps" data-q="BIFF Square Gukje Market Busan"></div></div></div><div class="row" data-cat="food photo"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Jeonpo Cafe Street</span><span class="badge b-free">бесплатно</span></div><div class="rs">Хипстерская кофе-улица в Seomyeon — инди-кофейни с дизайном (Пусан — кофейная столица: 90% импорта зерна идёт через порт).</div><div class="rl">📍 ст. Jeonpo</div><div class="maps" data-q="Jeonpo Cafe Street Busan"></div></div></div><div class="row" data-cat="food"><button class="chk">✓</button><div><div class="rt"><span class="nm">💎 Seomyeon</span><span class="badge b-free">бесплатно</span></div><div class="rs">Центр движухи Пусана — еда, BBQ, рынки, вечерняя жизнь и транспортный хаб.</div><div class="rl">📍 ст. Seomyeon</div><div class="maps" data-q="Seomyeon Busan"></div></div></div></section></div>
+<p class="foot">Часы и цены меняются — проверяй на Naver/Kakao перед визитом. Google показывает точки, Naver точнее строит пешие маршруты по Корее. Подборка из гайдов и YouTube/Instagram-блогеров, перепроверена по официальным источникам где возможно.</p>
+<script>window.__KEY__="korea_busan_v1";
+(function(){
+  [].slice.call(document.querySelectorAll('.maps')).forEach(function(m){
+    var q=encodeURIComponent(m.dataset.q);
+    m.innerHTML='<a class="mbtn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'"><span class="dot"></span>Google Maps</a>'+
+      '<a class="mbtn n" target="_blank" rel="noopener" href="https://map.naver.com/p/search/'+q+'"><span class="dot"></span>Naver</a>';
+  });
+  var KEY=window.__KEY__;
+  var rows=[].slice.call(document.querySelectorAll('.row'));
+  var saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  var cntEl=document.getElementById('cnt'),barEl=document.getElementById('bar');
+  document.getElementById('totalN').textContent=rows.length;
+  function refresh(){var d=rows.filter(function(r){return r.dataset.on==='1'}).length;cntEl.textContent=d;barEl.style.width=Math.round(d/rows.length*100)+'%';}
+  function setOn(r,on){r.dataset.on=on?'1':'0';r.querySelector('.chk').classList.toggle('on',on);r.classList.toggle('done',on);}
+  rows.forEach(function(r,i){
+    if(saved[i])setOn(r,true);
+    r.querySelector('.chk').addEventListener('click',function(){
+      var on=r.dataset.on==='1';setOn(r,!on);
+      if(on)delete saved[i];else saved[i]=1;
+      localStorage.setItem(KEY,JSON.stringify(saved));refresh();
+    });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    saved={};localStorage.removeItem(KEY);rows.forEach(function(r){setOn(r,false)});refresh();
+  });
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active')});c.classList.add('active');
+    var f=c.dataset.f;
+    rows.forEach(function(r){r.style.display=(f==='all'||r.dataset.cat.split(' ').indexOf(f)>-1)?'':'none';});
+    [].slice.call(document.querySelectorAll('.dist')).forEach(function(s){
+      s.style.display=[].slice.call(s.querySelectorAll('.row')).some(function(r){return r.style.display!=='none'})?'':'none';
+    });
+  })});
+  refresh();
+})();
+</script>
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf9f5"><title>Корея 2026 · гиды</title>
+<style>
+:root{
+  --bg:#faf9f5;--card:#ffffff;--soft:#f1efe8;--text:#1a1a18;--muted:#6b6a64;--faint:#9a988f;
+  --border:#e6e4db;--bordr2:#d3d1c7;--accent:#185fa5;--naver:#0c8a43;
+  --fr-b:#eaf3de;--fr-t:#3b6d11;--ch-b:#e6f1fb;--ch-t:#185fa5;--pd-b:#faeeda;--pd-t:#854f0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1d1c1a;--card:#292825;--soft:#2f2e2a;--text:#ededeb;--muted:#a3a199;--faint:#7d7b73;
+    --border:#3a3833;--bordr2:#4a4842;--accent:#85b7eb;--naver:#3ad17a;
+    --fr-b:#27500a;--fr-t:#c0dd97;--ch-b:#0c447c;--ch-t:#b5d4f4;--pd-b:#633806;--pd-t:#fac775;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;padding:16px 16px calc(28px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto}
+a{color:inherit}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:13px;color:var(--muted);margin:0 0 14px}
+.back{display:inline-block;font-size:13px;color:var(--accent);text-decoration:none;margin-bottom:10px}
+.info{background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:13px}
+.info div{margin:3px 0}
+.info b{font-weight:600}
+.legend{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.7}
+.barwrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5}
+.track{flex:1;height:7px;border-radius:999px;background:var(--soft);overflow:hidden}
+#bar{height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .2s}
+.cnt{font-size:12px;color:var(--muted);white-space:nowrap}
+.btn{font:inherit;font-size:12px;padding:5px 10px;border-radius:8px;border:0.5px solid var(--bordr2);background:var(--card);color:var(--muted);cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 6px}
+.chip{font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;border:0.5px solid var(--bordr2);background:var(--card);color:var(--muted);cursor:pointer;white-space:nowrap}
+.chip.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.dh{display:flex;align-items:baseline;gap:8px;font-size:15px;font-weight:600;margin:20px 0 6px}
+.dh .dt{font-size:12px;font-weight:400;color:var(--faint);margin-left:auto}
+.row{display:flex;gap:12px;padding:11px 0;border-top:0.5px solid var(--border)}
+.chk{flex:0 0 auto;width:26px;height:26px;border-radius:7px;border:1.5px solid var(--bordr2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:transparent;margin-top:1px;transition:.12s}
+.chk.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.rt{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.nm{font-size:15px;font-weight:600}
+.rs{font-size:13px;color:var(--muted);margin-top:2px}
+.rl{font-size:12px;color:var(--faint);margin-top:5px}
+.maps{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}
+.mbtn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;text-decoration:none;border-radius:8px;padding:6px 11px;border:0.5px solid var(--bordr2);background:var(--card)}
+.mbtn:active{background:var(--soft)}
+.mbtn.g{color:var(--accent)}.mbtn.n{color:var(--naver)}
+.mbtn .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.mbtn.g .dot{background:var(--accent)}.mbtn.n .dot{background:var(--naver)}
+.badge{font-size:11px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500}
+.b-free{background:var(--fr-b);color:var(--fr-t)}
+.b-cheap{background:var(--ch-b);color:var(--ch-t)}
+.b-paid{background:var(--pd-b);color:var(--pd-t)}
+.foot{font-size:12px;color:var(--faint);margin-top:20px}
+.done .nm{text-decoration:line-through;text-decoration-color:var(--faint)}
+.done{opacity:.62}
+
+.hub{display:flex;align-items:center;gap:14px;background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px;text-decoration:none}
+.hub:active{background:var(--soft)}
+.emo{font-size:30px;line-height:1}
+.ht{flex:1}
+.htt{font-size:16px;font-weight:600}
+.hts{font-size:13px;color:var(--muted);margin-top:2px}
+.arr{color:var(--faint);font-size:20px}
+.hl{font-size:13px;color:var(--muted);margin:2px 0 16px;line-height:1.6}
+</style></head><body>
+<h1>🇰🇷 Корея 2026 · мои гиды</h1>
+<p class="hl">Подборки для поездки (Сеул + Пусан, лето). Каждый гид — чек-лист с галочками, фильтрами и кнопками Google&nbsp;Maps / Naver. Добавь эту страницу на экран «Домой» в Safari — будет как приложение.</p>
+<a class="hub" href="https://stanskri.github.io/seoul-shopping-checklist/"><div class="emo">👕</div><div class="ht"><div class="htt">Шопинг</div><div class="hts">Мужской минимал по районам · деним, лён, дизайнеры</div></div><div class="arr">→</div></a><a class="hub" href="https://stanskri.github.io/seoul-coffee/"><div class="emo">☕</div><div class="ht"><div class="htt">Спешелти-кофе</div><div class="hts">47 кофеен Сеула · дизайн + качество, по районам</div></div><div class="arr">→</div></a><a class="hub" href="seoul.html"><div class="emo">🏙</div><div class="ht"><div class="htt">Сеул — что посмотреть</div><div class="hts">Виды, арт, еда, хипстер-районы, хайкинг</div></div><div class="arr">→</div></a><a class="hub" href="busan.html"><div class="emo">🌊</div><div class="ht"><div class="htt">Пусан — лучшее</div><div class="hts">Побережье, виды, морепродукты, арт</div></div><div class="arr">→</div></a>
+<p class="foot">Часы, цены и наличие меняются — проверяй на Naver/Kakao перед визитом. Собрано из гайдов и YouTube/Instagram-блогеров с перепроверкой фактов.</p>
+</body></html>
