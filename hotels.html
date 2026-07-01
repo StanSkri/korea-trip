@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf9f5"><title>Наши отели и переезды</title>
+<style>
+:root{
+  --bg:#faf9f5;--card:#ffffff;--soft:#f1efe8;--text:#1a1a18;--muted:#6b6a64;--faint:#9a988f;
+  --border:#e6e4db;--bordr2:#d3d1c7;--accent:#185fa5;--naver:#0c8a43;
+  --fr-b:#eaf3de;--fr-t:#3b6d11;--ch-b:#e6f1fb;--ch-t:#185fa5;--pd-b:#faeeda;--pd-t:#854f0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1d1c1a;--card:#292825;--soft:#2f2e2a;--text:#ededeb;--muted:#a3a199;--faint:#7d7b73;
+    --border:#3a3833;--bordr2:#4a4842;--accent:#85b7eb;--naver:#3ad17a;
+    --fr-b:#27500a;--fr-t:#c0dd97;--ch-b:#0c447c;--ch-t:#b5d4f4;--pd-b:#633806;--pd-t:#fac775;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;padding:16px 16px calc(28px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto}
+a{color:inherit}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:13px;color:var(--muted);margin:0 0 14px}
+.back{display:inline-block;font-size:13px;color:var(--accent);text-decoration:none;margin-bottom:10px}
+.info{background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:13px}
+.info div{margin:3px 0}
+.info b{font-weight:600}
+.dh{display:flex;align-items:baseline;gap:8px;font-size:15px;font-weight:600;margin:22px 0 6px}
+.dh .dt{font-size:12px;font-weight:400;color:var(--faint);margin-left:auto}
+.row{display:flex;gap:12px;padding:11px 0;border-top:0.5px solid var(--border)}
+.rt{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.nm{font-size:15px;font-weight:600}
+.rs{font-size:13px;color:var(--muted);margin-top:2px}
+.rl{font-size:12px;color:var(--faint);margin-top:5px}
+.maps{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}
+.mbtn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;text-decoration:none;border-radius:8px;padding:6px 11px;border:0.5px solid var(--bordr2);background:var(--card)}
+.mbtn:active{background:var(--soft)}
+.mbtn.g{color:var(--accent)}.mbtn.n{color:var(--naver)}
+.mbtn .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.mbtn.g .dot{background:var(--accent)}.mbtn.n .dot{background:var(--naver)}
+.badge{font-size:11px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500}
+.b-free{background:var(--fr-b);color:var(--fr-t)}
+.b-cheap{background:var(--ch-b);color:var(--ch-t)}
+.b-paid{background:var(--pd-b);color:var(--pd-t)}
+.opt{display:flex;gap:11px;padding:10px 0;border-top:0.5px solid var(--border)}
+.opt .oi{flex:0 0 auto;width:22px;text-align:center;font-size:17px;margin-top:1px}
+.opt .on{font-size:14px;font-weight:600}
+.opt .od{font-size:13px;color:var(--muted);margin-top:2px}
+.opt .op{font-size:12px;color:var(--faint);margin-top:4px}
+.tip{background:var(--ch-b);color:var(--ch-t);border-radius:10px;padding:9px 12px;font-size:12.5px;margin:8px 0 2px;line-height:1.5}
+.tipbox{background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:13px 15px;margin:16px 0 6px;font-size:13px;line-height:1.55}
+.tipbox b{font-weight:600}
+.tipbox ul{margin:8px 0 0;padding-left:18px}
+.tipbox li{margin:5px 0}
+.foot{font-size:12px;color:var(--faint);margin-top:20px}
+</style></head><body>
+<a class="back" href="index.html">← Все гиды</a>
+<h1>🏨 Наши отели и переезды</h1>
+<p class="sub">4 человека (Стас, София, Катя, Матвей) · 9–22 июля 2026 · маршрут Сеул → Каннын → Пусан. Цены на транспорт — в вонах (₩), как платить на месте.</p>
+<div class="info">
+<div>✈️ <b>Прилёт:</b> Инчхон (ICN), Терминал&nbsp;1 — 9 июля, 16:35 (Air China)</div>
+<div>✈️ <b>Вылет:</b> Инчхон (ICN) — 22 июля, 13:05</div>
+<div>💱 Курс ≈ 0,051&nbsp;₽/₩ · ₩1000 ≈ 51&nbsp;₽</div>
+</div>
+
+<div class="dh">🏨 Где живём <span class="dt">3 брони, оплачено</span></div>
+<div id="list">
+<div class="row"><div><div class="rt"><span class="nm">1 · Сеул — Value Stay Yongsan I</span><span class="badge b-paid">≈37 100 ₽</span></div><div class="rs">9→14 июля (5 ночей) · апартаменты · ₩720 960 (оплачено)</div><div class="rl">📍 Wonhyo-ro 3-ga 24, Yongsan · №5830477306 · PIN 9112</div><div class="maps" data-q="Value Stay Yongsan I 원효로3가 24 서울"></div></div></div>
+<div class="row"><div><div class="rt"><span class="nm">2 · Каннын — Skybay Hotel Gyeongpo</span><span class="badge b-paid">≈35 000 ₽</span></div><div class="rs">14→17 июля (3 ночи) · ₩680 625 (вкл. налог) · вид на Gyeongpo</div><div class="rl">📍 Gyeongpo Beach, Gangneung · №6301981167 · PIN 7948</div><div class="maps" data-q="Skybay Hotel Gyeongpo Gangneung"></div></div></div>
+<div class="row"><div><div class="rt"><span class="nm">3 · Пусан — Bexco Hostel B&amp;B</span><span class="badge b-paid">≈25 000 ₽</span></div><div class="rs">17→21 июля (4 ночи) · ₩486 000 (завтрак включён)</div><div class="rl">📍 у BEXCO / Centum City, Haeundae-gu · №5743728344 · PIN 2142</div><div class="maps" data-q="Bexco Hostel B&B Busan"></div></div></div>
+</div>
+
+<div class="dh">🚉 Как перемещаться <span class="dt">цены на 4 чел.</span></div>
+
+<div class="tip">Правило на четверых: короткий хоп внутри города (&lt;~7 км, «последняя миля») → берём <b>одно такси</b> — база в Корее низкая и делится на 4, выходит ≈ как 4 билета метро, но door-to-door с чемоданами. Межгород → только поезд.</div>
+
+<div class="dh" style="font-size:14px;margin:18px 0 2px">✈️ Этап 1 · ICN → отель в Сеуле (9 июля, вечер)</div>
+<div class="opt"><div class="oi">🚕</div><div><div class="on">Флэт-такси / минивэн напрямую ICN → Yongsan <span class="badge b-paid">такси</span></div><div class="od">Седан ₩65 000, минивэн (до 9 мест + багаж) ₩95 000 — фиксир. тариф, платка включена. Door-to-door ~70 мин.</div><div class="op">На 4: минивэн ₩95 000 ≈ 24 000 ₽… ≈ ₩23 800/чел</div></div></div>
+<div class="opt"><div class="oi">🚆</div><div><div class="on">AREX-экспресс → Seoul Station + такси до отеля <span class="badge b-cheap">микс</span></div><div class="od">Экспресс ₩11 000/чел, 43 мин; далее 1 такси Seoul St.→отель ₩6 000.</div><div class="op">На 4: ~₩44 000 + ₩6 000 ≈ ₩50 000</div></div></div>
+<div class="opt"><div class="oi">🚇</div><div><div class="on">AREX all-stop → Seoul Station + метро/такси <span class="badge b-cheap">дёшево</span></div><div class="od">All-stop ₩4 750/чел, ~60 мин; до отеля 1 ост. Line 1 (Namyeong) или 1 такси ₩6 000.</div><div class="op">На 4: ~₩19 000 (+ ₩6 000 если такси на финише)</div></div></div>
+<div class="tip">👉 Вечером после перелёта с багажом на четверых <b>минивэн-флэт ₩95 000</b> ≈ как AREX-экспресс на четверых, но без пересадок и лестниц. Здесь такси оправдано.</div>
+
+<div class="dh" style="font-size:14px;margin:18px 0 2px">🚄 Этап 2 · Сеул → Каннын (14 июля)</div>
+<div class="opt"><div class="oi">🚕</div><div><div class="on">Отель → Seoul Station (мини-хоп) <span class="badge b-paid">такси</span></div><div class="od">~2,5 км. 1 такси ₩6 000 на всех ≈ 4 билета метро (₩5 600), но с чемоданами и быстрее.</div><div class="op">Берём такси</div></div></div>
+<div class="opt"><div class="oi">🚄</div><div><div class="on">KTX Seoul Station → Gangneung <span class="badge b-cheap">поезд</span></div><div class="od">₩27 600/чел, ~2 ч, каждые 30–60 мин. (Альтернатива — от Cheongnyangni ₩26 000.)</div><div class="op">На 4: ~₩110 400</div></div></div>
+<div class="opt"><div class="oi">🚕</div><div><div class="on">Gangneung Station → Skybay (Gyeongpo) <span class="badge b-paid">такси</span></div><div class="od">~6 км, в Канныне метро нет. Такси ₩8 000–10 000/машина (~12 мин) или автобус 202/300 ₩1 500/чел.</div><div class="op">На 4 с багажом: 1–2 такси ₩8 000–18 000</div></div></div>
+<div class="opt"><div class="oi">🚌</div><div><div class="on">Альт.: экспресс-автобус Сеул → Каннын <span class="badge b-cheap">дёшево</span></div><div class="od">₩15 000/чел, ~2 ч 40 мин. Минус: терминал в Каннаме (далеко от Yongsan).</div><div class="op">На 4: ~₩60 000</div></div></div>
+
+<div class="dh" style="font-size:14px;margin:18px 0 2px">🚄 Этап 3 · Каннын → Пусан (17 июля)</div>
+<div class="opt"><div class="oi">🚄</div><div><div class="on">Прямой KTX-이음 (Donghae-линия) Gangneung → Bujeon <span class="badge b-cheap">1 поезд</span></div><div class="od">Новая линия с 30.12.2025: ~3 ч 50 мин, 6 рейсов/день, без пересадки. Через Jeongdongjin, Donghae, Pohang, Gyeongju, Taehwagang. ~₩35 000–45 000/чел.</div><div class="op">Приходит в <b>Bujeon</b> (не Busan Station) → до отеля метро Line 1→2 (пересадка Seomyeon) ₩1 700/чел, ~35 мин, или такси ₩12 000–15 000/машина</div></div></div>
+<div class="opt"><div class="oi">🚄</div><div><div class="on">Через Сеул — 2 KTX <span class="badge b-cheap">поезд</span></div><div class="od">Gangneung→Seoul (2 ч, ₩27 600) + Seoul→Busan (2 ч 15 м, ₩59 800) = ~₩87 400/чел, ~5–6 ч с пересадкой. Брать, если время 6 прямых рейсов не подходит.</div><div class="op">На 4: ~₩349 600</div></div></div>
+<div class="opt"><div class="oi">🚌</div><div><div class="on">Прямой автобус Gangneung → Busan <span class="badge b-cheap">дёшево</span></div><div class="od">Центральный/Nopo терминал, ~5 ч 30 мин, ₩35 000–45 000/чел. От Nopo — метро Line 1 до Centum.</div><div class="op">На 4: ~₩140 000–180 000</div></div></div>
+<div class="tip">👉 «Одним скоростным поездом» — это прямой KTX-이음. Он приходит в Bujeon; до района BEXCO/Centum дальше 35 мин метро (₩1 700) или такси на всех ₩12 000–15 000.</div>
+
+<div class="tipbox">
+<b>💡 Когда вчетвером выгоднее такси</b>
+<ul>
+<li><b>Короткие «последняя миля» хопы</b> (отель↔вокзал, вокзал→пляж/район) — почти всегда: база такси делится на 4 ≈ 4 билета метро, но door-to-door с багажом.</li>
+<li><b>Аэропорт → первый отель</b> вечером — минивэн-флэт ₩95 000 (~₩23 800/чел) ради комфорта после перелёта.</li>
+<li><b>Каннын</b> — метро в городе нет; до Gyeongpo только автобус/такси, на 4 такси очевиднее.</li>
+<li><b>Межгород</b> (Сеул↔Каннын, Каннын↔Пусан) — только поезд/автобус; такси нерентабельно (₩150 000+).</li>
+</ul>
+</div>
+
+<p class="foot">Цены и расписания меняются — сверяйся с Korail (letskorail.com), Naver Map и Kakao T перед выездом. Google показывает точки, Naver точнее строит маршруты по Корее. Тарифы такси — ориентировочные, зависят от трафика и числа машин под багаж.</p>
+<script>
+(function(){
+  [].slice.call(document.querySelectorAll('.maps')).forEach(function(m){
+    var q=encodeURIComponent(m.dataset.q);
+    m.innerHTML='<a class="mbtn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'"><span class="dot"></span>Google Maps</a>'+
+      '<a class="mbtn n" target="_blank" rel="noopener" href="https://map.naver.com/p/search/'+q+'"><span class="dot"></span>Naver</a>';
+  });
+})();
+</script>
+</body></html>
